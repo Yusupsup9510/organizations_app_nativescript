@@ -1,0 +1,8 @@
+<StackLayout>
+  <ns-nav-bar title="Login"></ns-nav-bar>
+  <StackLayout class="p-20">
+    <TextField [(ngModel)]="email" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" class="input mb-4"></TextField>
+    <TextField [(ngModel)]="password" hint="Password" secure="true" class="input mb-4"></TextField>
+    <Button text="Login" (tap)="onLogin()" class="btn btn-primary"></Button>
+  </StackLayout>
+</StackLayout>

@@ -1,0 +1,17 @@
+<StackLayout>
+  <ns-nav-bar [title]="roomName" [showBackButton]="true"></ns-nav-bar>
+  <StackLayout class="p-20">
+    <GridLayout rows="auto, *" columns="*, auto" class="mb-4">
+      <TextField [(ngModel)]="newTaskName" hint="New task name" row="0" col="0" class="input"></TextField>
+      <Button text="Add" (tap)="addTask()" row="0" col="1" class="btn btn-primary"></Button>
+    </GridLayout>
+    <ListView [items]="tasks" class="list-group">
+      <ng-template let-task="item">
+        <GridLayout columns="auto, *" class="list-group-item">
+          <CheckBox [checked]="task.completed" (tap)="toggleTask(task)" col="0"></CheckBox>
+          <Label [text]="task.name" [class.completed]="task.completed" col="1"></Label>
+        </GridLayout>
+      </ng-template>
+    </ListView>
+  </StackLayout>
+</StackLayout>

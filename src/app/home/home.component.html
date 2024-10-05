@@ -1,0 +1,14 @@
+<StackLayout>
+  <ns-nav-bar title="My Rooms"></ns-nav-bar>
+  <StackLayout class="p-20">
+    <GridLayout rows="auto, *" columns="*, auto" class="mb-4">
+      <TextField [(ngModel)]="newRoomName" hint="New room name" row="0" col="0" class="input"></TextField>
+      <Button text="Add" (tap)="addRoom()" row="0" col="1" class="btn btn-primary"></Button>
+    </GridLayout>
+    <ListView [items]="rooms" class="list-group">
+      <ng-template let-room="item">
+        <Label [text]="room.name" (tap)="goToRoom(room.id)" class="list-group-item"></Label>
+      </ng-template>
+    </ListView>
+  </StackLayout>
+</StackLayout>
